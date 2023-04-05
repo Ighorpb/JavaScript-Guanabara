@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Nacionalidade</title>
+</head>
+<body>
+    Você nasceu em qual pais? <input type="text" id="pborn">
+    <input type="button" value="Verificar" onclick="check()">
+    <div id="res">
+
+    </div>
+
+    <script>
+        function check(){
+            var nasc = document.querySelector('#pborn').value
+            var res = document.querySelector('#res')
+            res.innerHTML = `<p> Você nasceu em <strong>${nasc}</strong>! </p>`
+
+            if(nasc != 'Brasil') {
+                res.innerHTML += `Você nasceu no(a) <strong>${nasc}</strong>. Portando, para os brasileiros você é um estrangeiro`
+            } else {
+                res.innerHTML += ' <p>Nasceu no Brasil, portanto, é Brasileiro</p>'
+            }
+        }
+
+        // DOCUMENT.WRITE PARA TROCAR PELO RES.INNERHTML!!!!!!
+    </script>
+</body>
+</html>
+

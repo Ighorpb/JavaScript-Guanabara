@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+
+    <style>
+        div#area {
+            font: normal 20pt Arial;
+            background: rgb(42, 139, 42);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+   <div id="area">
+    Intereja...
+   </div>
+    
+   <script>
+    var a = document.getElementById('area')  // Acessando o Elemento dentro da DOM
+    a.addEventListener('click', clicar)      // Adicionando um 'ouvidor' para que toda vez que x assim ocorre, disparar o evento.
+    a.addEventListener('mouseenter', entrar) // Adicionando um 'ouvidor' para que toda vez que x assim ocorre, disparar o evento.
+    a.addEventListener('mouseout', saiu)     // Adicionando um 'ouvidor' para que toda vez que x assim ocorre, disparar o evento.
+
+        function clicar() {                 // Função para que toda vez clicar dentro da 'area', disparar uma função.
+            a.innerText = 'Clicou!'         // Vai trocar o conteúdo do texto e substituir pelo 'Clicou'.
+            a.style.background = 'red'      // Vai trocar o background que era verde por 'RED'.
+        }
+
+        function entrar() {                 // Função para que toda vez que entrar dentro da 'area' disparar uma função.
+            a.innerText = 'Entrou!'         // Vai trocar o conteúdo do texto e substituir pelo 'Entrou'
+            a.style.background = 'orange'   // Vai trocar o background que era verde por 'ORANGE'.
+
+        }
+
+        function saiu() {                   // Função para que toda vez que sair de dentro da 'area' disparar uma função.
+            a.innerText = 'Saiu!'           // Vai trocar o conteúdo do texto e substituir pelo 'Saiu'
+            a.style.background = 'black'    // Vai trocar o background que era verde por 'BLACK'.
+
+        }
+   </script>
+</body>
+</html>
